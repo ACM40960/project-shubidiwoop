@@ -50,14 +50,16 @@ The **SportsStatPredict** project is designed to provide users with accurate pre
 
 ### Usage
 
-1. Run the RMarkdown script using the knit button or the shortcut Ctrl+Shift+K:
+1. Make sure you have the dataset in your working directory. The game details dataset for the English Premier League's 2022-2023 season can be found in the [data](https://github.com/ACM40960/project-shubidiwoop/blob/main/data/E0.csv) folder of this repository.
+
+2.   Run the RMarkdown script using the knit button or the shortcut Ctrl+Shift+K:
    ```
    rmarkdown::render()
    ```
 
-2. View the generated reports' projected league standings, outcome predictions, and betting insights.
+3. View the generated reports' projected league standings, outcome predictions, and betting insights.
 
-3. Open the Python script file containing the EDA code using a text editor, IDE (e.g., PyCharm, Visual Studio Code), or Jupyter Notebook. Execute the EDA scripts by either:
+4. Open the Python script file containing the EDA code using a text editor, IDE (e.g., PyCharm, Visual Studio Code), or Jupyter Notebook. Execute the EDA scripts by either:
     - Using your IDE's "Run" feature.
     - Running cells in Jupyter Notebook.
     - Using the terminal with the python command and the script's filename.
