@@ -70,11 +70,21 @@ Ensure Python and the required libraries mentioned in the first code chunk are i
 
 The Poisson distribution is used in simulating football matches via MCMC due to its fit for modeling event counts i.e., goals scored. The derived Poisson regression model effectively captures this pattern. Goal distribution graph supports its relevance, confirming its role in football match simulation.
 
+<div style="background-color: white; display: inline-block; padding: 10px;">
+    <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/goal_poisson.svg">
+</div>
+
 - Train-test split point: For each `k`, the code trains the forecasting model using historical data and calculates the MAE for predicting future observations. The average Mean Absolute Error (MAE) is computed for home and away teams separately for different values of training set sizes. The code identifies the `k` value corresponding to the lowest average MAE through the plot, which can be considered as the optimal training set size for the forecasting task.
-  ??insert graph here
+
+<div style="background-color: white; display: inline-block; padding: 10px;">
+    <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/home_advantage.svg">
+</div>
   
 - Home Ground Advantage: The football data analysis shows home teams have an edge which may be due to factors like fan support and familiarity with their ground. This leads to an extra parameter (home ground advantage) in the Poisson regression model. The graph based on the 22-23 season confirms higher goal scoring for home teams. This parameter enhances realism, reducing differences between simulated and actual outcomes, measured by Mean Squared Error (MSE).
 
+<div style="background-color: white; display: inline-block; padding: 10px;">
+    <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/home2.svg">
+</div>
 
 ### Methodology
 
@@ -97,8 +107,6 @@ team_data <- as.data.frame(t(Table285[, c("HF", "HA", "AF", "AA")]))# Standardiz
 pca_result1 <- prcomp(scale(team_data), center = TRUE, scale. = TRUE)
 ```
 
-<img width="734" alt="fulltimeresults" src="https://github.com/ACM40960/project-22200226/assets/114998243/d14b09d5-e6cc-4934-a508-219b02799d34](https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/download.png)">
-
 - In addition to Principal Component Analysis (PCA), the SportsStatPredict project also employs Non-Metric Multidimensional Scaling (MDS) for visualizing teams in a 2D space while preserving their relative ranks. MDS is a technique that aims to represent high-dimensional data in a lower-dimensional space, often for visualization purposes. Non-Metric MDS is utilized to map team data into a 2D space, allowing for an intuitive visualization of team relationships. This technique retains the relative differences between teams while projecting them onto a 2D plane, providing insights into team clusters, similarities, and disparities.
   
 ```R
@@ -114,9 +122,16 @@ loc = isoMDS(dist(SimTable_actual), k=2, eig=TRUE)
 ```R
 procrustes(loc$points, loc2$points)
 ```
-???add graph here
+
+<div style="background-color: white; display: inline-block; padding: 10px;">
+    <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/procustes.svg">
+</div>
 
 - Furthemore, MAE and MAPE has been employed to compare the different models. MAE calculates the average absolute difference between each team's position in the actual standings and the corresponding position in the simulated standings. This metric provides an overall measure of positional accuracy. Furthermore, MAPE calculates the average percentage difference between each team's position in the actual standings and the corresponding position in the simulated standings. This metric provides insights into the relative accuracy of positional predictions.
+
+<div style="background-color: white; display: inline-block; padding: 10px;">
+    <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/team_points_barplot1.svg">
+</div>
 
 - Based on the results table, PCA has been identified as the preferred method to pursue further investigation and development in odds and betting.
 
@@ -132,6 +147,10 @@ procrustes(loc$points, loc2$points)
 - Ensuring house profits:
 
 To achieve this, a simulation-based approach is used to analyze the potential earnings and outcomes of a betting strategy applied to football match results. A function is used that generates simulated betting outcomes based on given odds and a specified number of bets. It adds randomness from both normal and uniform distributions to the initial bets and calculates the resulting betting values and the total earnings, which are made to be exponential to the number of bets made. As seen from the plot below, the total house earnings increase as the number of bets made increases.
+
+<div style="background-color: white; display: inline-block; padding: 10px;">
+    <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/moneyplot2.svg">
+</div>
 
 ### Future Prospects
 
