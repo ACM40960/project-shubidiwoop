@@ -172,7 +172,7 @@ We welcome contributions to the **SportsStatPredict** project! To contribute:
 
 ### License
 
-This project is licensed under the ?.
+This project is licensed under the MIT License. Please have a look at the [LICENSE.md](https://github.com/ACM40960/project-shubidiwoop/blob/main/LICENSE) for more details.
 
 ### References
 
