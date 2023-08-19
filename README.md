@@ -9,14 +9,19 @@ Welcome to the **SportsStatPredict** project repository! This project aims to le
 
 ### Table of Contents
 - [Project Overview](#project-overview)
+- [Data Sources](#data-sources)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Data Sources](#data-sources)
+- [Hyperparameters Evaluation](#hyperparameters-evaluation)
 - [Machine Learning Algorithms](#machine-learning-algorithms)
+- [Methodology](#methodology)
+- [Results](#results)
 - [Betting Insights](#betting-insights)
+- [Future Prospects](#future-prospects)
 - [Contributing](#contributing)
 - [License](#license)
+- [References](#references)
 
 ### Project Overview
 
