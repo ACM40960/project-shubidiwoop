@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="10%" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/football clipart.png">
+</p>
+
 <h1 align="center">
   <b>
     Monte Carlo Simulation and Betting System for Premier League Predictions
