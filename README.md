@@ -40,11 +40,11 @@ Welcome to the project repository! This project aims to leverage machine learnin
 - [References](#references)
 - [Data Sources](#data-sources)
 - [Authors](#authors)
+- [Poster](https://github.com/ACM40960/project-shubidiwoop/blob/main/Poster.png) <em> Click me for more details </em>
 
 ### Project Overview 
 
-The project is designed to provide users with accurate predictions for sports outcomes, league standings, and betting odds comparisons. By utilizing machine learning techniques, historical sports statistics, and real-time odds data, the project aims to enhance sports enthusiasts' understanding of upcoming events.
-
+The project is designed to provide users with accurate predictions for sports outcomes, league standings, and betting odds comparisons. By utilizing machine learning techniques, historical sports statistics, and real-time odds data, the project aims to enhance sports enthusiasts' understanding of upcoming events. 
 ### Features
 
 - **EDA**: The dataset offers a comprehensive view of English Premier League matches for the 2022-2023 season. It includes match results, stats, and diverse betting odds. This resource is valuable for analyzing match outcomes, betting trends, and statistical modeling in sports analytics.
@@ -110,7 +110,10 @@ The Poisson distribution simulates football matches via MCMC due to its fit for 
 
 - Train-test split point: For each `k`, the code trains the forecasting model using historical data and calculates the MAE for predicting future observations. The average Mean Absolute Error (MAE) is computed for home and away teams separately for different values of training set sizes. The code identifies the `k` value corresponding to the lowest average MAE through the plot, which can be considered as the optimal training set size for the forecasting task.
 
-(k split svg)
+<div style="background-color: white; display: inline-block; padding: 10px;">
+    <img width="734" alt="k_ideal" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/average_mae_plot.svg">
+   <p style="text-align: center;"><em>Figure 2: Scatter plot depicting the relationship between the parameter k and the average Mean Absolute Error (Avg_MAE= home and away average)</em></p> 
+</div>
   
 - Home Ground Advantage: The football data analysis shows home teams have an edge which may be due to factors like fan support and familiarity with their ground. This leads to an extra parameter (home ground advantage) in the Poisson regression model. The graph based on the 22-23 season confirms higher goal scoring for home teams. This parameter enhances realism, reducing differences between simulated and actual outcomes, measured by Mean Squared Error (MSE).
 
@@ -122,12 +125,12 @@ The Poisson distribution simulates football matches via MCMC due to its fit for 
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="home_advantage" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/home_advantage.svg">
-   <p style="text-align: center;"><em>Figure 2: Barplot demonstrating the impact of home team advantage in football matches for the 22-23 season.</em></p>
+   <p style="text-align: center;"><em>Figure 3: Barplot demonstrating the impact of home team advantage in football matches for the 22-23 season.</em></p>
 </div>
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="home-advantage-mse" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/home2.svg">
-   <p style="text-align: center;"><em>Figure 3: Relationship between Home Advantage and Mean Squared Error in football match simulation</em></p>
+   <p style="text-align: center;"><em>Figure 4: Relationship between Home Advantage and Mean Squared Error in football match simulation</em></p>
 </div>
 
 ### Project Workflow
@@ -196,14 +199,14 @@ procrustes(loc$points, loc2$points)
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="procustes" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/procustes.svg">
-   <p><em>Figure 4: Comparing PCA-derived points and actual league table points using Procrustes Analysis</em></p>
+   <p><em>Figure 5: Comparing PCA-derived points and actual league table points using Procrustes Analysis</em></p>
 </div>
 
 - Furthemore, MAE and MAPE has been employed to compare the different models. MAE calculates the average absolute difference between each team's position in the actual standings and the corresponding position in the simulated standings. This metric provides an overall measure of positional accuracy. Furthermore, MAPE calculates the average percentage difference between each team's position in the actual standings and the corresponding position in the simulated standings. This metric provides insights into the relative accuracy of positional predictions.
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="standings" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/team_points_barplot1.svg">
-   <p><em>Figure 5: Multiple barchart depicting comparison of team points using different prediction methods </em></p>
+   <p><em>Figure 6: Multiple barchart depicting comparison of team points using different prediction methods </em></p>
 </div>
 
 ## Model Evaluation Metrics
@@ -243,7 +246,7 @@ To achieve this, a simulation-based approach is used to analyze the potential ea
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="moneyplot" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/moneyplot2.svg">
-   <p><em>Figure 6: Relationship between the number of bets per match and total house earnings.</em></p>
+   <p><em>Figure 7: Relationship between the number of bets per match and total house earnings.</em></p>
 </div>
 
 ### Future Prospects
