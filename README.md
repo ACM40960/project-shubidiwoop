@@ -7,6 +7,8 @@
 
 Welcome to the project repository! This project aims to leverage machine learning algorithms to predict sports outcomes, project league standings, and provide insights into betting odds. By combining historical sports statistics and real-time odds data, this project enhances the understanding of sports events and their potential outcomes.
 
+**View this README in light mode for better graph visibility.**
+
 ### Table of Contents
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
