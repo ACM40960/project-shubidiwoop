@@ -9,9 +9,8 @@ Welcome to the project repository! This project aims to leverage machine learnin
 
 **View this README in light mode for better graph visibility.**
 
-### Table of Contents
+### Table of Contents 📑
 - [Project Overview](#project-overview)
-- [Data Sources](#data-sources)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -21,18 +20,18 @@ Welcome to the project repository! This project aims to leverage machine learnin
 - [Results](#results)
 - [Betting Insights](#betting-insights)
 - [Future Prospects](#future-prospects)
+- [Conclusion](#conclusion)
 - [Contributing](#contributing)
 - [License](#license)
 - [References](#references)
+- [Data Sources](#data-sources)
+- [Authors](#authors)
 
-### Project Overview
+### Project Overview 
 
 The project is designed to provide users with accurate predictions for sports outcomes, league standings, and betting odds comparisons. By utilizing machine learning techniques, historical sports statistics, and real-time odds data, the project aims to enhance sports enthusiasts' understanding of upcoming events.
 
-### Data Sources
 
-- Historical sports statistics: Source the relevant historical data for the sports leagues of interest. In the case of the English premier league, the data has been sourced [here](https://www.football-data.co.uk/englandm.php)
-- Real-time odds data: Integrated with APIs or scraping tools to retrieve real-time odds data from betting platforms such as Bet365, Blue Square, Bet&Win etc. Data structure as been described [here](https://www.football-data.co.uk/notes.txt)
 
 ### Features
 
@@ -73,7 +72,10 @@ The project is designed to provide users with accurate predictions for sports ou
     ```
     python script_filename.py
     ```
-Ensure Python and the required libraries mentioned in the first code chunk are installed.
+Ensure Python and the required libraries mentioned in the first code chunk are installed. If not, the following code can be used to install it locally. 
+```
+!pip install pandas seaborn matplotlib
+```
 The output of the EDA can be found in the EDA folder [here](https://github.com/ACM40960/project-shubidiwoop/blob/main/EDA/Final_project_EDA.html)
 
 ### Hyperparameters Evaluation
@@ -226,7 +228,7 @@ To achieve this, a simulation-based approach is used to analyze the potential ea
 
 The current simulation-based approach, inspired by the project, holds exciting prospects for future applications. It can be extended to different sports leagues, seasons, and even esports. Enhancements can involve integrating real-time data for a more realistic house earnings model and comparing a variety of machine learning models like Random Forests and Neural Networks for improved predictions. This expansion could greatly amplify the methodology's versatility, accuracy, and relevance for sports analytics and the betting industry.
 
-## Conclusion
+### Conclusion
 
 In conclusion, this project demonstrates a holistic approach that combines advanced statistical modeling, machine learning techniques, and real-time odds comparison to accurately predict sports outcomes, enabling informed betting decisions while ensuring the sustainability of house profits, which can be replicated across various sports leagues and seasons.
 
@@ -252,7 +254,13 @@ This project is licensed under the MIT License. Please have a look at the [LICEN
 - Source: UCD 2023 Spring Multivariate Analysis coursework
 - Source: "English Premier League and Championship Soccer Data" by Football-Data.co.uk.
 
+### Data Sources
+
+- Historical sports statistics: Source the relevant historical data for the sports leagues of interest. In the case of the English premier league, the data has been sourced [here](https://www.football-data.co.uk/englandm.php)
+- Real-time odds data: Integrated with APIs or scraping tools to retrieve real-time odds data from betting platforms such as Bet365, Blue Square, Bet&Win etc. Data structure as been described [here](https://www.football-data.co.uk/notes.txt)
+
 ---
+### Authors
 
 Feel free to reach out to the project maintainers for any questions or clarifications.
 
