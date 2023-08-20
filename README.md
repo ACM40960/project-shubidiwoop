@@ -31,8 +31,8 @@ The project is designed to provide users with accurate predictions for sports ou
 
 ### Data Sources
 
-- Historical sports statistics: Source the relevant historical data for the sports leagues of interest. In the case of the English premier league, the data has been sourced from https://www.football-data.co.uk/englandm.php
-- Real-time odds data: Integrated with APIs or scraping tools to retrieve real-time odds data from betting platforms such as Bet365, Blue Square, Bet&Win etc. Data structure as been described here https://www.football-data.co.uk/notes.txt
+- Historical sports statistics: Source the relevant historical data for the sports leagues of interest. In the case of the English premier league, the data has been sourced [here](https://www.football-data.co.uk/englandm.php)
+- Real-time odds data: Integrated with APIs or scraping tools to retrieve real-time odds data from betting platforms such as Bet365, Blue Square, Bet&Win etc. Data structure as been described [here](https://www.football-data.co.uk/notes.txt)
 
 ### Features
 
@@ -172,14 +172,14 @@ procrustes(loc$points, loc2$points)
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="procustes" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/procustes.svg">
-   <p><em>Figure 4: Comparing PCA-derived points and actual league table points using Procrustes Analysis</p>
+   <p><em>Figure 4: Comparing PCA-derived points and actual league table points using Procrustes Analysis</em></p>
 </div>
 
 - Furthemore, MAE and MAPE has been employed to compare the different models. MAE calculates the average absolute difference between each team's position in the actual standings and the corresponding position in the simulated standings. This metric provides an overall measure of positional accuracy. Furthermore, MAPE calculates the average percentage difference between each team's position in the actual standings and the corresponding position in the simulated standings. This metric provides insights into the relative accuracy of positional predictions.
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="standings" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/team_points_barplot1.svg">
-   <p><em>Figure 5: Multiple barchart depicting comparison of team points using different prediction methods </p>
+   <p><em>Figure 5: Multiple barchart depicting comparison of team points using different prediction methods </em></p>
 </div>
 
 ## Model Evaluation Metrics
@@ -219,7 +219,7 @@ To achieve this, a simulation-based approach is used to analyze the potential ea
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="moneyplot" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/moneyplot2.svg">
-   <p><em>Figure 6: Relationship between the number of bets per match and total house earnings.</p>
+   <p><em>Figure 6: Relationship between the number of bets per match and total house earnings.</em></p>
 </div>
 
 ### Future Prospects
