@@ -108,14 +108,14 @@ The Poisson distribution simulates football matches via MCMC due to its fit for 
    <p style="text-align: center;"><em>Figure 1: Graph illustrating the alignment of the Poisson distribution model with observed goal distribution in football matches.</em></p> 
 </div>
 
-- Train-test split point: For each `k`, the code trains the forecasting model using historical data and calculates the MAE for predicting future observations. The average Mean Absolute Error (MAE) is computed for home and away teams separately for different values of training set sizes. The code identifies the `k` value corresponding to the lowest average MAE through the plot, which can be considered as the optimal training set size for the forecasting task.
+- Train-test split point: For each `k`, the code trains the forecasting model using historical data and calculates the MAE for predicting future observations. The average Mean Absolute Error (MAE) is computed for home and away teams separately for different values of training set sizes. The code identifies the `k` value corresponding to the lowest average MAE through the plot, which can be considered as the optimal training set size for the forecasting task. Optimal k figured is around 228 (out of 380 matches played in a season)
 
 <div style="background-color: white; display: inline-block; padding: 10px;">
     <img width="734" alt="k_ideal" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/average_mae_plot.svg">
    <p style="text-align: center;"><em>Figure 2: Scatter plot depicting the relationship between the parameter k and the average Mean Absolute Error (Avg_MAE= home and away average)</em></p> 
 </div>
   
-- Home Ground Advantage: The football data analysis shows home teams have an edge which may be due to factors like fan support and familiarity with their ground. This leads to an extra parameter (home ground advantage) in the Poisson regression model. The graph based on the 22-23 season confirms higher goal scoring for home teams. This parameter enhances realism, reducing differences between simulated and actual outcomes, measured by Mean Squared Error (MSE).
+- Home Ground Advantage: The football data analysis shows home teams have an edge which may be due to factors like fan support and familiarity with their ground. This leads to an extra parameter (home ground advantage) in the Poisson regression model. The graph based on the 22-23 season confirms higher goal scoring for home teams. This parameter enhances realism, reducing differences between simulated and actual outcomes, measured by Mean Squared Error (MSE). This comes to around 0.45.
 
 ```R
   # Calculate lambdaa and lambdab with home advantage
