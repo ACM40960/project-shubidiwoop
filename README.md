@@ -5,7 +5,7 @@
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
-Welcome to the **SportsStatPredict** project repository! This project aims to leverage machine learning algorithms to predict sports outcomes, project league standings, and provide insights into betting odds. By combining historical sports statistics and real-time odds data, this project enhances the understanding of sports events and their potential outcomes.
+Welcome to the project repository! This project aims to leverage machine learning algorithms to predict sports outcomes, project league standings, and provide insights into betting odds. By combining historical sports statistics and real-time odds data, this project enhances the understanding of sports events and their potential outcomes.
 
 ### Table of Contents
 - [Project Overview](#project-overview)
@@ -14,8 +14,8 @@ Welcome to the **SportsStatPredict** project repository! This project aims to le
 - [Installation](#installation)
 - [Usage](#usage)
 - [Hyperparameters Evaluation](#hyperparameters-evaluation)
+- [Project Workflow](#project-workflow)
 - [Machine Learning Algorithms](#machine-learning-algorithms)
-- [Methodology](#methodology)
 - [Results](#results)
 - [Betting Insights](#betting-insights)
 - [Future Prospects](#future-prospects)
@@ -25,7 +25,7 @@ Welcome to the **SportsStatPredict** project repository! This project aims to le
 
 ### Project Overview
 
-The **SportsStatPredict** project is designed to provide users with accurate predictions for sports outcomes, league standings, and betting odds comparisons. By utilizing machine learning techniques, historical sports statistics, and real-time odds data, the project aims to enhance sports enthusiasts' understanding of upcoming events.
+The project is designed to provide users with accurate predictions for sports outcomes, league standings, and betting odds comparisons. By utilizing machine learning techniques, historical sports statistics, and real-time odds data, the project aims to enhance sports enthusiasts' understanding of upcoming events.
 
 ### Data Sources
 
@@ -44,10 +44,9 @@ The **SportsStatPredict** project is designed to provide users with accurate pre
 1. Clone the repository:
    ```
    git clone https://github.com/ACM40960/project-shubidiwoop.git   
-   cd SportsStatPredict
    ```
-2. Ensure you have Rstudio:
-   Rstudio can be installed through (https://posit.co/products/open-source/rstudio/). The project was implemented on v4.2.1. 
+2. RStudio is an integrated development environment (IDE) for R programming. It provides a user-friendly interface for writing and running R scripts, visualizing data, and generating reports. Ensure you have Rstudio:
+   Rstudio can be installed using this [link](https://posit.co/products/open-source/rstudio/). The project was implemented on v4.2.1. 
 2. Install the required libraries mentioned in the first code chunk through the Rstudio console:
    ```
    install.packages("package-name")
@@ -57,7 +56,7 @@ The **SportsStatPredict** project is designed to provide users with accurate pre
 
 1. Make sure you have the dataset in your working directory. The game details dataset for the English Premier League's 2022-2023 season can be found in the [data](https://github.com/ACM40960/project-shubidiwoop/blob/main/data/E0.csv) folder of this repository.
 
-2.   Run the RMarkdown script using the knit button or the shortcut Ctrl+Shift+K:
+2. Run the RMarkdown script using the knit button or the shortcut Ctrl+Shift+K:
    ```
    rmarkdown::render()
    ```
@@ -93,7 +92,7 @@ The Poisson distribution is used in simulating football matches via MCMC due to 
     <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/home2.svg">
 </div>
 
-### Methodology
+### Project Workflow
 
 1. Optimal split value derived from MAE.
 2. Simulate EPL table using various approaches: 
@@ -106,7 +105,9 @@ The Poisson distribution is used in simulating football matches via MCMC due to 
 5. Compare predicted odds with actual organization-provided odds.
 6. Translate odds to monetary terms, ensuring the house profits.
 
-- Principal Component Analysis (PCA) is a dimensionality reduction technique commonly used in machine learning to transform high-dimensional data into a lower-dimensional space while preserving as much variance as possible. In SportsStatPredict project, PCA has been used to extract meaningful features such as the team strengths, incorporating the home team advantage, from sports statistics data. This has in turn been used to simulate the league standings, and the odds for a team to win a game. It can be seen that the first two principal components reflect more than 95% variability in the data. 
+### Machine Learning Algorithms
+
+- Principal Component Analysis (PCA) is a dimensionality reduction technique commonly used in machine learning to transform high-dimensional data into a lower-dimensional space while preserving as much variance as possible. In the project, PCA has been used to extract meaningful features such as the team strengths, incorporating the home team advantage, from sports statistics data. This has in turn been used to simulate the league standings, and the odds for a team to win a game. It can be seen that the first two principal components reflect more than 95% variability in the data. 
 
 ```R
 team_data <- as.data.frame(t(Table285[, c("HF", "HA", "AF", "AA")]))# Standardize the data before performing PCA
@@ -114,7 +115,35 @@ team_data <- as.data.frame(t(Table285[, c("HF", "HA", "AF", "AA")]))# Standardiz
 pca_result1 <- prcomp(scale(team_data), center = TRUE, scale. = TRUE)
 ```
 
-- In addition to Principal Component Analysis (PCA), the SportsStatPredict project also employs Non-Metric Multidimensional Scaling (MDS) for visualizing teams in a 2D space while preserving their relative ranks. MDS is a technique that aims to represent high-dimensional data in a lower-dimensional space, often for visualization purposes. Non-Metric MDS is utilized to map team data into a 2D space, allowing for an intuitive visualization of team relationships. This technique retains the relative differences between teams while projecting them onto a 2D plane, providing insights into team clusters, similarities, and disparities.
+- Generalized Linear Models (GLMs) can play a significant role in this project by offering a versatile framework for predicting sports outcomes based on various factors. GLMs extend linear regression to accommodate non-normally distributed response variables, making them suitable for modeling binary outcomes like win/loss in sports. In the context of sports statistics, a GLM can be tailored to estimate the probabilities of different match outcomes by considering input features such as team strengths, home advantage, and previous performance. By applying appropriate link functions and distribution assumptions, GLMs can generate outcome probabilities and simulate league standings. Comparing the predicted standings with actual outcomes allows evaluation of the model's performance, aiding in the selection of the most effective predictive method.
+
+```R
+  parameters <- glm(formula = Y ~ 0 + XX, family = poisson)
+# In parameters function
+```
+
+- In addition, the project incorporates manual functions and the Poisson distribution to compute critical factors such as attack and defense strengths, along with the home advantage for each team. By analyzing historical data, these functions assess the average goals scored and conceded by each team. The attack strength is derived from the difference between average goals scored and conceded, while defense strength stems from the contrary difference. These calculated strengths form the basis for predicting match outcomes using the Poisson distribution. The λ (lambda) parameters, representing expected goal counts, are adjusted to include the home advantage, further enhancing the model's predictive accuracy.
+```R
+# Calculate Attack and Defence Strength for each team
+team_data$Attack <- sapply(team_data$Team, function(team) {
+  # Calculate average goals scored and conceded for the team
+  avg_goals_scored <- mean(c(data_subset$FTHG[data_subset$HomeTeam == team], data_subset$FTAG[data_subset$AwayTeam == team]))
+  avg_goals_conceded <- mean(c(data_subset$FTAG[data_subset$HomeTeam == team], data_subset$FTHG[data_subset$AwayTeam == team]))
+  return(avg_goals_scored - avg_goals_conceded)
+})
+team_data$Defence <- sapply(team_data$Team, function(team) {
+  # Calculate average goals scored and conceded for the team
+  avg_goals_scored <- mean(c(data_subset$FTHG[data_subset$HomeTeam == team], data_subset$FTAG[data_subset$AwayTeam == team]))
+  avg_goals_conceded <- mean(c(data_subset$FTAG[data_subset$HomeTeam == team], data_subset$FTHG[data_subset$AwayTeam == team]))
+  return(avg_goals_conceded - avg_goals_scored)
+})
+
+      # Calculate lambdaa and lambdab with home advantage
+      lambdaa <- exp(parameters$teams[a, "Attack"] - parameters$teams[b, "Defence"] + home_advantage)
+      lambdab <- exp(parameters$teams[b, "Attack"] - parameters$teams[a, "Defence"])
+```
+
+- In addition to Principal Component Analysis (PCA), the project also employs Non-Metric Multidimensional Scaling (MDS) for visualizing teams in a 2D space while preserving their relative ranks. MDS is a technique that aims to represent high-dimensional data in a lower-dimensional space, often for visualization purposes. Non-Metric MDS is utilized to map team data into a 2D space, allowing for an intuitive visualization of team relationships. This technique retains the relative differences between teams while projecting them onto a 2D plane, providing insights into team clusters, similarities, and disparities.
   
 ```R
 # Non-Metric MDS for 2D visualization
@@ -124,7 +153,7 @@ loc = isoMDS(dist(SimTable_actual), k=2, eig=TRUE)
 
 ### Results
 
-- The SportsStatPredict project utilizes Procrustes analysis to compare the results obtained from different models. Procrustes analysis is a technique that aligns two sets of data points to best match their structures. In the context of this project, Procrustes analysis is used to align the MDS representations of different models, enabling a quantitative comparison of their predictions and visualizations in the 2D space. The scatter plot below visualizes the results of a Procrustes analysis performed on two sets of Non-metric Multidimensional scaled data of the actual standing and pca standing table. The blue points correspond to the aligned data points from the "Actual" set, while the red dashed line indicates the 1:1 reference line, highlighting how well the alignment matches the original data.
+- The project utilizes Procrustes analysis to compare the results obtained from different models. Procrustes analysis is a technique that aligns two sets of data points to best match their structures. In the context of this project, Procrustes analysis is used to align the MDS representations of different models, enabling a quantitative comparison of their predictions and visualizations in the 2D space. The scatter plot below visualizes the results of a Procrustes analysis performed on two sets of Non-metric Multidimensional scaled data of the actual standing and pca standing table. The blue points correspond to the aligned data points from the "Actual" set, while the red dashed line indicates the 1:1 reference line, highlighting how well the alignment matches the original data.
 
 ```R
 procrustes(loc$points, loc2$points)
@@ -140,7 +169,7 @@ procrustes(loc$points, loc2$points)
     <img width="734" alt="Poisson distribution" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/team_points_barplot1.svg">
 </div>
 
-- Based on the results table, PCA has been identified as the preferred method to pursue further investigation and development in odds and betting.
+- Based on the results table, GLM has been identified as the preferred method to pursue further investigation and development in odds and betting.
 
 ### Betting Insights
 
@@ -161,7 +190,7 @@ To achieve this, a simulation-based approach is used to analyze the potential ea
 
 ### Future Prospects
 
-The current simulation-based approach, inspired by SportsStatPredict, holds exciting prospects for future applications. It can be extended to different sports leagues, seasons, and even esports. Enhancements can involve integrating real-time data for a more realistic house earnings model and comparing a variety of machine learning models like Random Forests and Neural Networks for improved predictions. This expansion could greatly amplify the methodology's versatility, accuracy, and relevance for sports analytics and the betting industry.
+The current simulation-based approach, inspired by the project, holds exciting prospects for future applications. It can be extended to different sports leagues, seasons, and even esports. Enhancements can involve integrating real-time data for a more realistic house earnings model and comparing a variety of machine learning models like Random Forests and Neural Networks for improved predictions. This expansion could greatly amplify the methodology's versatility, accuracy, and relevance for sports analytics and the betting industry.
 
 ## Conclusion
 
@@ -169,7 +198,7 @@ In conclusion, this project demonstrates a holistic approach that combines advan
 
 ### Contributing
 
-We welcome contributions to the **SportsStatPredict** project! To contribute:
+We welcome contributions to the project! To contribute:
 
 1. Fork the repository.
 2. Create a new branch for your feature: `git checkout -b feature-new-feature`
