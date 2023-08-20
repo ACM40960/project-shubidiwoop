@@ -1,4 +1,4 @@
-## Monte Carlo Simulation and Betting System for Premier League Predictions
+<p align="center"><h1><b>Monte Carlo Simulation and Betting System for Premier League Predictions</b></h1></p>
 
 ![Rstudio](https://img.shields.io/badge/Rstudio-v4.2.1+-blue.svg)
 ![Python](https://img.shields.io/badge/python-v3.11.4+-red.svg)
@@ -6,6 +6,10 @@
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
 Welcome to the project repository! This project aims to leverage machine learning algorithms to predict sports outcomes, league standings, and provide insights into betting odds. By combining historical sports statistics and real-time odds data, this project enhances the understanding of sports events and their potential outcomes.
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/ACM40960/project-shubidiwoop/blob/main/assets/soccer-dribbble.gif">
+</p>
 
 **View this README in light mode for better graph visibility.**
 
